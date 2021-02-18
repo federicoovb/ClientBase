@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -26,7 +26,7 @@ public class ClientBase {
         System.out.println("Apertura connessione");
         try {
             while(true){
-                Socket server = new Socket("127.0.0.1", 6666);
+                Socket server = new Socket("10.1.33.3", 5500);
                 InputStream dalServer = server.getInputStream();
                 BufferedReader lettore = new BufferedReader(new InputStreamReader(dalServer));
 
@@ -35,14 +35,11 @@ public class ClientBase {
 
                 lettore.close();
                 server.close();
-                System.out.println("Chiusura connessione");
-                Thread.sleep(5000);
+                System.out.println("Chiusura connessione"); 
             }
         } catch (IOException ex) {
             Logger.getLogger(ClientBase.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InterruptedException e) {
-            
-        }
+        }    
     }
     
 }
